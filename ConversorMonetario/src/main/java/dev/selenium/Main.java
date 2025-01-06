@@ -20,6 +20,7 @@ public class Main {
                 double tasa_de_conversion= Double.valueOf(ExtraccionDeTasaDeConversionDelJson.extraccion(json,abreviaturas[1]));
                 System.out.println("Ingrese el valor que deseas convertir");
                 cantidad_monetaria=entrada.nextDouble();
+                System.out.println("La conversion de "+cantidad_monetaria+" ("+abreviaturas[0]+") a ("+abreviaturas[1]+") es: "+cantidad_monetaria*tasa_de_conversion);
 
             } else {
                 System.out.println("Ingrese una opción valida");
