@@ -1,5 +1,6 @@
 package dev.selenium;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
@@ -16,10 +17,10 @@ public class Main {
                 //Dolar(USD) peso argentino(ARS) real brasileño(BRL) peso colombiano(COP)
                 String[] abreviaturas = SeleccionAbreviaturaMoneda.identificarAbreviaturaMoneda(opc);
                 String json=SolicitudTasaCambio.obtenerTasaDeCambio(abreviaturas[0]);
-                ExtraccionDeDatosJson.extraccion(json);
+                double tasa_de_conversion= Double.valueOf(ExtraccionDeTasaDeConversionDelJson.extraccion(json,abreviaturas[1]));
                 System.out.println("Ingrese el valor que deseas convertir");
                 cantidad_monetaria=entrada.nextDouble();
-                
+
             } else {
                 System.out.println("Ingrese una opción valida");
             }
